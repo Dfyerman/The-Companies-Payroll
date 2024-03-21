@@ -3,17 +3,49 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-}
+  let employees = [];
+  let continueAddingEmployees = true;
+//Loop For Adding More Employees
+  while (continueAddingEmployees) {
+    let firstName = window.prompt('Enter First Name:');
+    let lastName = window.prompt('Enter Last Name:');
+    let salary = window.prompt('Enter Salary:');
+//Sends the First Name, Last Name, And Salary to the employee functiom
+    let employee = {
+      firstName: firstName,
+      lastName: lastName,
+      salary: parseInt (salary)
+    };
+//Pushing to the empoloyee Array
+    employees.push(employee);
+//Asks if they want to continue the loop of adding employees
+    let continueInput = window.confirm('Do you want to add another employee');
+    
+//If False we stop the loop and return the loop objects to the array    
+    if (!continueInput) {
+      continueAddingEmployees = false;
+    }
+  }
+  return employees;
+};
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
-}
+  let total = 0;
+
+  for (let i = 0; i < employeesArray.length; i++) {
+    total += employeesArray[i].salary;
+  }
+
+  const average = total / employeesArray.length;
+  console.log(`Average Salary: ${average.toFixed(2)}`);
+};
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+  const randomEmployee = employeesArray [(Math.random () * employeesArray.length).toFixed(0)]
+
+  console.log (`Random Emloyee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
 }
 
 /*
@@ -68,7 +100,7 @@ const trackEmployeeData = function() {
 
   getRandomEmployee(employees);
 
-  employees.sort(function(a,b) {
+  employees.sort((a,b) => {
     if (a.lastName < b.lastName) {
       return -1;
     } else {
@@ -81,3 +113,4 @@ const trackEmployeeData = function() {
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
