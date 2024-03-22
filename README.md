@@ -8,7 +8,7 @@ Installation: N/A
 
 Usage: be able to organize employee payroll based on last name alphabeticaly.
 
-![Image-Of-Program](file:///C:/Users/dfyer/OneDrive/Desktop/Employee%20Payroll%20Tracker%20-%20Copy.pdf)
+<img src="./Assets/Employee Payroll Tracker - Copy.pdf" alt="Image of Usage" />
 
 Credits:
 
