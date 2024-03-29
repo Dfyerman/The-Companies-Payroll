@@ -9,12 +9,14 @@ const collectEmployees = function() {
   while (continueAddingEmployees) {
     let firstName = window.prompt('Enter First Name:');
     let lastName = window.prompt('Enter Last Name:');
-    let salary = window.prompt('Enter Salary:');
+    let salary = parseInt(window.prompt('Enter Salary:'));
+      
+  
 //Sends the First Name, Last Name, And Salary to the employee functiom
     let employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: parseInt (salary)
+      salary: salary
     };
 //Pushing to the empoloyee Array
     employees.push(employee);
@@ -27,6 +29,7 @@ const collectEmployees = function() {
     }
   }
   return employees;
+ 
 };
 
 // Display the average salary
@@ -45,8 +48,10 @@ const displayAverageSalary = function(employeesArray) {
 const getRandomEmployee = function(employeesArray) {
   const randomEmployee = employeesArray [(Math.random () * employeesArray.length).toFixed(0)]
 
-  console.log (`Random Emloyee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
-}
+  console.log (`Random Emloyee: ${randomEmployee.firstName} `);
+};
+
+
 
 /*
   ====================
